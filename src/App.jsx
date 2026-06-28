@@ -1241,10 +1241,18 @@ export default function App() {
         <MapContainer center={[12.9716,77.5946]} zoom={13} minZoom={3} maxZoom={19}
           style={{position:'absolute',inset:0,width:'100%',height:'100%'}} ref={mapRef} closePopupOnClick={false}>
           <MapInvalidate/>
+          {/*
+            FIXED: Stadia Maps requires the requesting domain to be registered
+            in their dashboard, or it throws a 401 on any domain it doesn't
+            recognize (which is what was happening on the deployed site).
+            Switched to CartoDB's dark tiles — free, no API key, and works
+            on any domain out of the box.
+          */}
           <TileLayer
-            url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
-            attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>'
+            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
             maxZoom={20}
+            subdomains="abcd"
           />
           {issues.filter(i=>i.latitude!=null&&i.longitude!=null).map(i=>(
             <Marker key={i.id} position={[+i.latitude,+i.longitude]} icon={markerIcon(i.status)}>
