@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-
+ 
 const supabaseUrl     = "https://wbjckwryfjwzmybeqcvd.supabase.co";
 const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndiamNrd3J5Zmp3em15YmVxY3ZkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4MjE3OTI3NSwiZXhwIjoyMDk3NzU1Mjc1fQ.CLvpchCUb3kQnfMjlB_PFzzJMaZR-DJ2tLV0EZfJZtU";
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
