@@ -1249,7 +1249,7 @@ export default function App() {
             on any domain out of the box.
           */}
           <TileLayer
-            url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
             maxZoom={20}
             subdomains="abcd"
@@ -1405,9 +1405,8 @@ const globalCSS = `
   .leaflet-popup-tip-container { display:none !important; }
   .leaflet-popup-close-button { color:rgba(0,242,255,0.6) !important; font-size:18px !important; top:6px !important; right:8px !important; }
   .leaflet-popup-close-button:hover { color:#ef4444 !important; }
-  .leaflet-container { width:100% !important; height:100% !important; background:#0d1515; }
-  .cg-tiles { filter: brightness(1.35) contrast(1.15) saturate(1.1); }
-  .leaflet-tile-pane { filter: brightness(1.35) contrast(1.15) saturate(1.1); }
+  .leaflet-container { width:100% !important; height:100% !important; background:#e8e8e0; }
+  .cg-tiles { filter: saturate(1.05) contrast(1.05); }
   textarea:focus { border-color:#00f2ff !important; box-shadow:0 0 0 1px rgba(0,242,255,0.2); }
   button:active { transform:scale(0.97) !important; }
   input[type="file"] { cursor:pointer; }
